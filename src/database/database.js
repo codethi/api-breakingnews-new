@@ -5,7 +5,7 @@ const connectDatabase = () => {
 
   mongoose
     .connect(
-      "mongodb+srv://root:admin@breakingnews.4s00k.mongodb.net/myFirstDatabase?retryWrites=true&w=majority",
+      "mongodb+srv://root:root@cluster0.cbphb.mongodb.net/?retryWrites=true&w=majority",
       {
         useNewUrlParser: true,
         useUnifiedTopology: true,
