@@ -1,4 +1,4 @@
-const userService = require("../services/user.service");
+import userService from "../services/user.service.js";
 
 const create = async (req, res) => {
   try {
@@ -19,8 +19,6 @@ const create = async (req, res) => {
         message: "Error creating User",
       });
     }
-
-    const token = authService.generateToken(user.id);
 
     res.status(201).send({
       message: "User created",
@@ -90,4 +88,4 @@ const update = async (req, res) => {
   }
 };
 
-module.exports = { create, findAll, findById, update };
+export default { create, findAll, findById, update };
