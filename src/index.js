@@ -1,8 +1,8 @@
 const express = require("express");
-const connectDatabase = require("./src/database/database");
-const userRoute = require("./src/routes/user.route");
+const connectDatabase = require("./database/database");
+const userRoute = require("./routes/user.route");
 
-const port = 300;
+const port = 3000;
 const app = express();
 
 connectDatabase();
