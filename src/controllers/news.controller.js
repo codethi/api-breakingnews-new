@@ -2,6 +2,28 @@ import { createService, findAllService } from "../services/news.service.js";
 
 const create = async (req, res) => {
   try {
+    const { authorization } = req.headers;
+
+    if (!authorization) {
+      return res.send(401);
+    }
+
+    const parts = authorization.split(" ");
+
+    if (parts.length !== 2) {
+      return res.send(401);
+    }
+
+    const [schema, token] = parts;
+
+    if (parts.length !== 2) {
+      return res.send(401);
+    }
+
+    if (schema !== "Bearer") {
+      return res.send(401);
+    }
+
     const { title, text, banner } = req.body;
 
     if (!title || !banner || !text) {
