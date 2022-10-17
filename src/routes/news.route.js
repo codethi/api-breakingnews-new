@@ -7,7 +7,8 @@ import {
   topNews,
   findById,
   searchByTitle,
-  byUser
+  byUser,
+  update
 } from "../controllers/news.controller.js";
 import { authMiddleware } from "../middlewares/auth.middleware.js";
 
@@ -16,7 +17,7 @@ router.get("/", findAll);
 router.get("/top", topNews);
 router.get("/search", searchByTitle);
 router.get("/byUser", authMiddleware, byUser )
-
 router.get("/:id", authMiddleware, findById);
+router.patch("/:id", authMiddleware, update)
 
 export default router;
